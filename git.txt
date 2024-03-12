@@ -1,0 +1,58 @@
+FYI Important commands for GIT
+
+- Git setup
+    git config --global user.name "sujalMT"
+    git config --global user.email “sujal@mirrortech.asia”
+
+- Check globally set GIT user
+    git config user.name
+    git config user.email
+
+- Create new ssh key in Mac
+    ssh-keygen -t rsa
+
+- Find public key in id_rsa.pub
+    open ~/.ssh
+
+- To copy directly without open file
+    cat ~/.ssh/id_rsa.pub | pbcopy
+
+- After local merge 
+    Esc -> : -> wq -> Enter
+
+// Git conflicts in same branch 
+// Issue - Not took pull before commit
+// Git pull  —no-ff
+
+- When Local changes are there and branch has new pushed to take a pull before commit 
+    Git stash —> set local changes as anonymous
+    Git fetch —> fetch all changes
+    Git pull —> get changes in branch
+    Git stash pop —> set back locks changes made back to files
+
+- It will remove the last local (unpushed) commit, 
+    but will keep changes you have done.
+    git reset --soft HEAD^
+
+- For checkout particular commit
+    git checkout (commit ID) find it from git log
+
+- To re-checkout latest commit
+    git switch -
+
+- Delete branch locally
+    git branch -d <branch name>
+
+- Cherrypick
+    git cherry-pick commitSHA (With commit message)
+    git cherry-pick --no-commit commitSHA (Without commit messages)
+
+- How to add file in git ignore which is already exist in REPO
+    - Add in .gitignore file
+        - android/gradle.properties
+        - gradle.properties
+
+    - Un-track file command
+        - git update-index --assume-unchanged android/gradle.properties
+    - Re-track file command
+        - git update-index --no-assume-unchanged android/gradle.properties

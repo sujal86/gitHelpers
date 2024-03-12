@@ -1,0 +1,3 @@
+- How to Release certificate fingerprint
+    Path - fire command in keystore path
+    Command - keytool -list -v -keystore your_keystore_name -alias your_alias_name
